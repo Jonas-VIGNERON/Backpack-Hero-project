@@ -20,3 +20,6 @@ My work mainly focused on:
 - Object-oriented design  
 - Game logic implementation  
 - System interactions
+
+### About This Game
+There is a file **/docs/user.pdf**, written in french which describes how to play at this game, with a little wiki at the bottom.
