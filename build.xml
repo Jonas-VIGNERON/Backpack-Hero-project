@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BackpackHero" default="jar" basedir=".">
+
+    <property name="src" value="src"/>
+    <property name="classes" value="classes"/>
+    <property name="lib" value="lib"/>
+    <property name="docs" value="docs/doc"/>
+    <property name="jar" value="BackpackHero.jar"/>
+    <property name="main.class" value="affichage.gameController.SimpleGameController"/>
+
+    <!-- Compile -->
+    <target name="compile">
+        <mkdir dir="${classes}"/>
+        <javac srcdir="${src}" destdir="${classes}" encoding="UTF-8">
+            <classpath>
+                <fileset dir="${lib}" includes="*.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <!-- Jar (target par défaut) -->
+	<target name="jar" depends="compile">
+		<jar destfile="${jar}">
+		<manifest>
+			<attribute name="Main-Class" value="${main.class}"/>
+			<attribute name="Class-Path" value="lib/zen-6.0.jar"/>
+		</manifest>
+		<fileset dir="${classes}"/>
+		</jar>
+		<!-- Supprime les classes après création du JAR -->
+		<delete dir="${classes}"/>
+		<mkdir dir="${classes}"/>
+	</target>
+
+
+    <!-- Javadoc -->
+    <target name="javadoc">
+		<mkdir dir="${docs}"/>
+		<javadoc sourcepath="${src}" destdir="${docs}" encoding="UTF-8">
+		    <classpath>
+		        <fileset dir="${lib}" includes="*.jar"/>
+		    </classpath>
+		</javadoc>
+	</target>
+
+
+
+    <!-- Clean -->
+    <target name="clean">
+        <delete dir="${classes}"/>
+        <mkdir dir="${classes}"/>
+        <delete dir="${docs}"/>
+        <delete file="${jar}"/>
+    </target>
+
+</project>
+
