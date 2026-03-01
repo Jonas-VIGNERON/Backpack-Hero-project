@@ -1,6 +1,6 @@
 # Academic Java Game Project
 
-This project was developed as part of an academic assignment in Java.
+This project was developed as part of an academic assignment in Java, in collaboration with a classmate.
 
 ## My Contribution
 
